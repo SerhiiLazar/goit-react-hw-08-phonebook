@@ -23,8 +23,8 @@ export const LoginForm = () => {
         label="Email"
         variant="outlined"
         size="small"
-        name="small"
-        type="small"
+        name="email"
+        type="email"
         required
         sx={{mb: '20px'}}
         >
