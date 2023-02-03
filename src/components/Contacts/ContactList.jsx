@@ -1,12 +1,12 @@
 import React from 'react';
 import Notification from 'components/Notification';
-import css from './Contacts.module.css';
+import css from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { selectContacts, selectVisibleContacts } from 'redux/contacts/selectors';
 // import PropTypes from 'prop-types';
 
-export const Contacts = () => {
+export const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 

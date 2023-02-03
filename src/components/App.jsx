@@ -11,9 +11,9 @@ import { Typography } from '@mui/material';
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
-const TasksPage = lazy(() => import('../pages/Contacts'));
+const ContactsPage = lazy(() => import('../pages/Contacts'));
 
-export const App = () => {
+export function App() {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
@@ -42,7 +42,7 @@ export const App = () => {
         <Route
           path="/contacts"
           element={
-            <PrivateRoute redirectTo="/login" component={<TasksPage />} />
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
       </Route>

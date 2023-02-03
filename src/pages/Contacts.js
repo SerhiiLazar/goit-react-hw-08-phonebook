@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 import { Section } from 'components/Section';
-import { Contacts } from 'components/Contacts';
+import { ContactList } from 'components/Contacts/ContactList';
 import { FilterInput } from 'components/FilterInput';
 import { Loader } from 'components/Loader';
+import { Form } from 'components/Form/Form';
 // import { ContactList } from 'components/ContactList';
 import { Box, Modal, Button, Stack } from '@mui/material';
 import AddBoxIcon from '@mui/icons-material/AddBox';
@@ -58,7 +59,7 @@ export default function Contactc() {
       }}
     >
       <Section title="Contacts">
-        <FilterInput />
+        
 
         <Stack direction="row" spacing={2} sx={{ ml: 'auto' }}>
           <Button
@@ -92,11 +93,12 @@ export default function Contactc() {
                 }}
                 onClick={handleClose}
               />
-              <Contacts modalClose={handleClose} />
+              <Form modalClose={handleClose} />
             </Box>
           </Modal>
         </Fragment>
-
+        <FilterInput />
+        <ContactList />
         {/* <ContactList /> */}
         {isLoading && !error && <Loader />}
       </Section>

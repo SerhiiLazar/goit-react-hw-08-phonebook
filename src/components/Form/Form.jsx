@@ -3,27 +3,28 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { TextField, Button, Box } from '@mui/material';
 import css from './Form.module.css';
 // import PropTypes from 'prop-types';
 
-export function Form() {
+export function Form({modalClose}) {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const [name, setName] = useState('');
-  const [phone, setPnohe] = useState('');
+  const [number, setNumber] = useState('');
   const nameContact = contacts.map(contact => contact.name);
 
   const hendleSubmit = e => {
     e.preventDefault();
-
+    const form = e.currentTarget;
     if (nameContact.includes(name)) {
       return alert(`${name} is already in contacts`);
     }
 
-    dispatch(addContact({name, phone}));
+    dispatch(addContact({name, number}));
 
-    setName('');
-    setPnohe('');
+    form.reset();
+    modalClose();
 
     console.log(e.target.value)
   };
@@ -35,7 +36,7 @@ export function Form() {
         setName(value);
         break;
       case 'number':
-        setPnohe(value);
+        setNumber(value);
         break;
       default:
         break;
@@ -44,37 +45,37 @@ export function Form() {
 
   return (
     <form className={css.phonebookForm} onSubmit={hendleSubmit}>
-      <label className={css.label}>
-        <p>Name:</p>
-        <input
-          className={css.input}
+        <TextField
+          label="Name"
+          variant='outlined'
+          size="small"
           type="text"
           name="name"
           onChange={handleChenge}
           value={name}
-          autoCapitalize="off"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
+          sx={{ mb: '20px'}}
         />
-      </label>
-      <label className={css.label}>
-        <p>Namber:</p>
-        <input
-          className={css.input}
+        <TextField
+          label="Number"
+          variant='outlined'
+          size='small'
           type="tel"
           name="number"
           onChange={handleChenge}
-          value={phone}
+          value={number}
           autoCapitalize="off"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
+          sx={{ mb: '20px'}}
         />
-      </label>
-      <button className={css.formBtn} type="submit">
+      <Box>
+      <Button className={css.formBtn} type="submit">
         Add contact
-      </button>
+      </Button>
+      <Button className={css.formBtn} type="submit">
+        Add contact
+      </Button>
+      </Box>
     </form>
   );
 }

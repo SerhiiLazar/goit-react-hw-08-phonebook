@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks';
 import { Button } from '@mui/material';
+
+
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
@@ -10,8 +12,8 @@ export const Navigation = () => {
         <Button variant="inherit">Home</Button>
       </NavLink>
       {isLoggedIn && (
-        <NavLink to="/tasks">
-          <Button variant="inherit">Tasks</Button>
+        <NavLink to="/contacts">
+          <Button variant="inherit">Contacts</Button>
         </NavLink>
       )}
     </nav>
