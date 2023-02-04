@@ -18,7 +18,7 @@ const styles = {
       fontWeight: 500,
       fontSize: 38,
       textAlign: 'center',
-      color: '#1976d',
+      
     },
   };
 

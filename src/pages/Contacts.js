@@ -19,11 +19,12 @@ const style = {
   left: '50%',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
+  justifyContent: 'flex-end',
   alignItems: 'flex-end',
   transform: 'translate(-50%, -50%)',
-  width: 350,
   bgcolor: 'background.paper',
+  backgroundColor:  'rgba(255, 249, 231)',
+  borderRadius: 5,
   border: '1px solid #808080',
   boxShadow: 24,
   pt: 6,
@@ -59,16 +60,16 @@ export default function Contactc() {
         alignItems: 'center',
         justifyContent: 'center',
         margin: '0 auto',
-        width: 350,
       }}
     >
       <Section title="Contacts">
         
 
-        <Stack direction="row" spacing={2} sx={{padding: '10px', margin: '0 auto', ml: 'auto',  }}>
+        <Stack direction="row" spacing={2} sx={{padding: '10px',  margin: '0 auto', ml: 'auto',  }}>
           <Button
             size="large"
             variant="text"
+            color="success"
             startIcon={<AddBoxIcon />}
             onClick={handleOpen}
           >
