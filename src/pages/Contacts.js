@@ -65,14 +65,14 @@ export default function Contactc() {
       <Section title="Contacts">
         
 
-        <Stack direction="row" spacing={2} sx={{ ml: 'auto',  }}>
+        <Stack direction="row" spacing={2} sx={{padding: '10px', margin: '0 auto', ml: 'auto',  }}>
           <Button
             size="large"
             variant="text"
             startIcon={<AddBoxIcon />}
             onClick={handleOpen}
           >
-            Add
+            ADD CONTACT
           </Button>
         </Stack>
 

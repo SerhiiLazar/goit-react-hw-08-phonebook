@@ -1,1 +1,1 @@
-export { AuthNav } import './AuthNav';
+export { AuthNav } from './AuthNav';
