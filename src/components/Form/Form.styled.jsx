@@ -1,4 +1,12 @@
-.phonebookForm {
+import styled from '@emotion/styled';
+
+export const FormStyled = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+/* .phonebookForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,4 +40,4 @@ p {
 
 .formBtn:hover {
     box-shadow: none;
-}
+} */

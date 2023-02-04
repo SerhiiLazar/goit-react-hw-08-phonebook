@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import { TextField, Button, Box } from '@mui/material';
-import css from './Form.module.css';
+import { FormStyled } from './Form.styled';
 // import PropTypes from 'prop-types';
 
 export function Form({modalClose}) {
@@ -26,7 +26,6 @@ export function Form({modalClose}) {
     form.reset();
     modalClose();
 
-    console.log(e.target.value)
   };
 
   const handleChenge = e => {
@@ -44,7 +43,7 @@ export function Form({modalClose}) {
   };
 
   return (
-    <form className={css.phonebookForm} onSubmit={hendleSubmit}>
+    <FormStyled onSubmit={hendleSubmit}>
         <TextField
           label="Name"
           variant='outlined'
@@ -68,15 +67,23 @@ export function Form({modalClose}) {
           required
           sx={{ mb: '20px'}}
         />
-      <Box>
-      <Button className={css.formBtn} type="submit">
-        Add contact
-      </Button>
-      <Button className={css.formBtn} type="submit">
-        Add contact
-      </Button>
+      <Box
+        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+      >
+        <Button variant="contained" color="success" type="submit" sx={{ mb: 2, width: '50%' }}>
+          Add contact
+        </Button>
+        <Button
+          variant="contained"
+          color="error"
+          type="button"
+          sx={{ width: '50%' }}
+          onClick={modalClose}
+        >
+          Сancel
+        </Button>
       </Box>
-    </form>
+    </FormStyled>
   );
 }
 

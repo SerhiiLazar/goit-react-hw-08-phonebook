@@ -1,1 +1,0 @@
-export { UpdateForm } from './UpdateForm';

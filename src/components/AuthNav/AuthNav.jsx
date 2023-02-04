@@ -9,7 +9,7 @@ export const AuthNav = () => {
           variant="inherit"
           sx={{
             textTransform: 'capitalize',
-          }}>Register</Button>
+          }}>Registration</Button>
       </NavLink>
       <NavLink to="/login">
         <Button 

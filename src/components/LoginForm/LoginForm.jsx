@@ -39,7 +39,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} autoComplete="off">
+    <Form noValidate onSubmit={handleSubmit} autoComplete="off">
       <TextField
         onChange={(e) => setEmail(e.target.value)}
         label="Email"

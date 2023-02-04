@@ -11,7 +11,6 @@ export const Header = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar
@@ -34,6 +33,5 @@ export const Header = () => {
         </Toolbar>
       </AppBar>
     </Box>
-    
   );
 };

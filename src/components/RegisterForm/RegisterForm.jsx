@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { TextField, Button } from '@mui/material';
 import toast from 'react-hot-toast';
+import { Form } from './RegisterForm.styled';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form noValidate onSubmit={handleSubmit} autoComplete="off">
+    <Form noValidate onSubmit={handleSubmit} autoComplete="off">
       <TextField
         onChange={(e) => setName(e.target.value)}
         label="Username"
@@ -75,6 +76,6 @@ export const RegisterForm = () => {
         error={passwordError}
       />
       <Button variant="contained" type="submit">Register</Button>
-    </form>
+    </Form>
   );
 };
