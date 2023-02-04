@@ -50,16 +50,3 @@ export function App() {
   );
 };
 
-//   return (
-//     <div className={css.appBody}>
-//       <Section title="Phonebook">
-//         <Form />
-//       </Section>
-//       <Section title="Contacts">
-//         <FilterInput />
-//         <Contacts />
-//         {isLoading && !error && <Loader />}
-//       </Section>
-//     </div>
-//   );
-// }

@@ -8,7 +8,6 @@ import { FilterInput } from 'components/FilterInput';
 import { Loader } from 'components/Loader';
 import { Form } from 'components/Form/Form';
 import { selectContacts } from 'redux/contacts/selectors';
-// import { ContactList } from 'components/ContactList';
 import { Box, Modal, Button, Stack } from '@mui/material';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import CloseIcon from '@mui/icons-material/Close';
@@ -23,7 +22,7 @@ const style = {
   justifyContent: 'center',
   alignItems: 'flex-end',
   transform: 'translate(-50%, -50%)',
-  width: '25%',
+  width: 350,
   bgcolor: 'background.paper',
   border: '1px solid #808080',
   boxShadow: 24,
